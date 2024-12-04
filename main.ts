@@ -19,6 +19,18 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         tiles.placeOnTile(mySprite2, mySprite.tilemapLocation())
     }
 })
+scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile2`, function (sprite, location) {
+    let _4 = 0
+    if (_4 == 0) {
+    	
+    } else if (_4 == 1) {
+    	
+    } else if (_4 == 2) {
+    	
+    } else if (_4 == 3) {
+    	
+    }
+})
 scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile0`, function (sprite, location) {
     _1 = 1
     tiles.placeOnRandomTile(mySprite2, sprites.dungeon.collectibleBlueCrystal)
@@ -26,6 +38,8 @@ scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile0`, function (sprite, 
 scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile1`, function (sprite, location) {
     if (_3 == 0) {
         _3 += randint(-1, -6)
+        radio.sendMessage(radio.__message(0)
+        )
     } else if (_3 == 1) {
         _3 += -1
     } else if (_3 == 2) {
@@ -38,8 +52,7 @@ scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile1`, function (sprite, 
         _3 += -1
     } else if (_3 == 6) {
         _3 += -1
-    }
-    else if (_3 == 7){
+    } else if (_3 == 7) {
         _3 += -1
     }
 })
@@ -107,6 +120,7 @@ scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile9`, function (sprite, 
 })
 radio.onReceivedMessage(RadioMessage.message1, function () {
     _2 += 1
+    tiles.placeOnRandomTile(mySprite2, sprites.dungeon.collectibleBlueCrystal)
 })
 let _2 = 0
 let _3 = 0
@@ -148,7 +162,7 @@ mySprite = sprites.create(img`
     ..2..........................2..
     .2............................2.
     2..............................2
-    `, SpriteKind.Player)
+`, SpriteKind.Player)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 tiles.placeOnRandomTile(mySprite, assets.tile`myTile0`)
@@ -183,3 +197,6 @@ for (let index = 0; index < 1; index++) {
         ........................
         `, SpriteKind.soldier)
 }
+radio.onReceivedMessage(radio.__message(0), function() {
+    
+})
