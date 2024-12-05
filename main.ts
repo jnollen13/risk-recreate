@@ -1,4 +1,5 @@
 enum RadioMessage {
+    secland = 23475,
     message1 = 49434
 }
 namespace SpriteKind {
@@ -22,14 +23,45 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile2`, function (sprite, location) {
     let _4 = 0
     if (_4 == 0) {
-    	
+        silders_1 += randint(-1, -8)
     } else if (_4 == 1) {
-    	
+        silders_1 += -1
     } else if (_4 == 2) {
-    	
+        silders_1 += -1
     } else if (_4 == 3) {
-    	
+        silders_1 += -1
+    } else if (_4 == 4) {
+        silders_1 += -1
+    } else if (_4 == 5) {
+        silders_1 += -1
+    } else if (_4 == 6) {
+        silders_1 += -1
+    } else if (_4 == 8) {
+        silders_1 += -1
+    } else if (_4 == 9) {
+        silders_1 += -1
+    } else if (_4 == 10) {
+        silders_1 += -1
+    } else if (_4 == 11) {
+        silders_1 += -1
+    } else if (_4 == 12) {
+        silders_1 += -1
+    } else if (_4 == 13) {
+        silders_1 += -1
+    } else if (_4 == 15) {
+        silders_1 += -1
+    } else if (_4 == 16) {
+        silders_1 += -1
+    } else if (_4 >= 18) {
+        game.splash("error(0)")
+        game.reset()
+    } else if (_4 < 0) {
+        game.splash("error(1)")
+        game.reset()
     }
+})
+radio.onReceivedMessage(RadioMessage.secland, function () {
+    tiles.placeOnRandomTile(mySprite2, sprites.dungeon.collectibleBlueCrystal)
 })
 scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile0`, function (sprite, location) {
     _1 = 1
@@ -38,8 +70,7 @@ scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile0`, function (sprite, 
 scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile1`, function (sprite, location) {
     if (_3 == 0) {
         _3 += randint(-1, -6)
-        radio.sendMessage(radio.__message(0)
-        )
+        radio.sendMessage(RadioMessage.secland)
     } else if (_3 == 1) {
         _3 += -1
     } else if (_3 == 2) {
@@ -54,6 +85,27 @@ scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile1`, function (sprite, 
         _3 += -1
     } else if (_3 == 7) {
         _3 += -1
+    } else if (_3 == 8) {
+        _3 += -1
+    } else if (_3 == 9) {
+        _3 += -1
+    } else if (_3 == 10) {
+        _3 += -1
+    } else if (_3 == 11) {
+        _3 += -1
+    } else if (_3 == 12) {
+        _3 += -1
+    } else if (_3 == 13) {
+        _3 += -1
+    } else if (_3 == 14) {
+        _3 += -1
+    } else if (_3 == 15) {
+        _3 += -1
+    } else if (_3 == 16) {
+        _3 += -1
+    } else if (_3 >= 18) {
+        game.splash("error(0)")
+        game.reset
     }
 })
 scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile9`, function (sprite, location) {
@@ -118,6 +170,12 @@ scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile9`, function (sprite, 
         }
     }
 })
+scene.onOverlapTile(SpriteKind.Player, sprites.builtin.oceanSand12, function (sprite, location) {
+    let _5 = 0
+    if (_5 == 0) {
+    	
+    }
+})
 radio.onReceivedMessage(RadioMessage.message1, function () {
     _2 += 1
     tiles.placeOnRandomTile(mySprite2, sprites.dungeon.collectibleBlueCrystal)
@@ -162,7 +220,7 @@ mySprite = sprites.create(img`
     ..2..........................2..
     .2............................2.
     2..............................2
-`, SpriteKind.Player)
+    `, SpriteKind.Player)
 controller.moveSprite(mySprite)
 scene.cameraFollowSprite(mySprite)
 tiles.placeOnRandomTile(mySprite, assets.tile`myTile0`)
@@ -197,6 +255,3 @@ for (let index = 0; index < 1; index++) {
         ........................
         `, SpriteKind.soldier)
 }
-radio.onReceivedMessage(radio.__message(0), function() {
-    
-})
