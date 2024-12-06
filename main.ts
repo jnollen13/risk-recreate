@@ -24,54 +24,70 @@ scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile2`, function (sprite, 
     let _4 = 0
     if (_4 == 0) {
         silders_1 += randint(-1, -8)
+        radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 1) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 2) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 3) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 4) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 5) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 6) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 8) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 9) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 10) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 11) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 12) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 13) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 15) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 == 16) {
         silders_1 += -1
         radio.sendMessage(RadioMessage.secland)
+        _4 += 1
     } else if (_4 >= 18) {
         game.splash("error(0)")
-        game.reset()
+        game.debug
     } else if (_4 < 0) {
         game.splash("error(1)")
-        game.reset()
+        game.debug
     }
 })
 radio.onReceivedMessage(RadioMessage.secland, function () {
@@ -135,7 +151,7 @@ scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile1`, function (sprite, 
         radio.sendMessage(RadioMessage.secland)
     } else if (_3 >= 18) {
         game.splash("error(0)")
-        game.reset
+        game.debug
     }
 })
 scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile9`, function (sprite, location) {
@@ -193,10 +209,10 @@ scene.onOverlapTile(SpriteKind.soldier, assets.tile`myTile9`, function (sprite, 
             radio.sendMessage(RadioMessage.message1)
         } else if (_2 >= 17) {
             game.splash("error (0)")
-            game.setGameOverMessage(false, "error(0)")
+            game.debug
         } else if (_2 < 0) {
             game.splash("error (1)")
-            game.reset()
+            game.debug
         }
     }
 })
